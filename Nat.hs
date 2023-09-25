@@ -29,3 +29,7 @@ pred (S n) = n
 fact :: Nat -> Nat
 fact O = S O
 fact (S n) = S n * fact n
+
+fib :: Nat -> Nat
+fib (S (S n)) = fib (S n) + fib n
+fib n = n
