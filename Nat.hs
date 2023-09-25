@@ -33,3 +33,8 @@ fact (S n) = S n * fact n
 fib :: Nat -> Nat
 fib (S (S n)) = fib (S n) + fib n
 fib n = n
+
+min :: (Nat, Nat) -> Nat
+min (n, O) = O
+min (O, m) = O
+min (S n, S m) = S (min (n, m))
