@@ -22,6 +22,6 @@ double :: Nat -> Nat
 double O = O
 double (S n) = S (S (double n))
 
-pd :: Nat -> Nat
-pd O = O
-pd (S n) = n
+pred :: Nat -> Nat
+pred O = O
+pred (S n) = n
