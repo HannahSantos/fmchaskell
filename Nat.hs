@@ -14,6 +14,10 @@ n + (S m) = S (n + m)
 n * O = O
 n * (S m) = n + (n * m)
 
+(^) :: Nat -> Nat -> Nat
+n ^ O = S O
+n ^ (S m) = n * (n ^ m)
+
 double :: Nat -> Nat
 double O = O
 double (S n) = S (S (double n))
