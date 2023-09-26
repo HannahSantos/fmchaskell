@@ -38,3 +38,8 @@ min :: (Nat, Nat) -> Nat
 min (n, O) = O
 min (O, m) = O
 min (S n, S m) = S (min (n, m))
+
+max :: (Nat, Nat) -> Nat
+max (n, O) = n
+max (O, m) = m
+max (S n, S m) = S (max (n, m))
