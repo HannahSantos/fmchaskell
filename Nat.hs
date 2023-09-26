@@ -18,6 +18,11 @@ n * (S m) = n + (n * m)
 n ^ O = S O
 n ^ (S m) = n * (n ^ m)
 
+(∸) :: Nat -> Nat -> Nat
+n ∸ O = n
+O ∸ m = O
+(S n) ∸ (S m) = n ∸ m
+
 double :: Nat -> Nat
 double O = O
 double (S n) = S (S (double n))
