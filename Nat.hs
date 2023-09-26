@@ -1,7 +1,7 @@
 module Nat where
 
 import Prelude
-    hiding ((+), (*), (^), quot, min, gcd, lcm, div, max, pred, rem)
+    hiding ((+), (*), (^), (<), quot, min, gcd, lcm, div, max, pred, rem)
 
 data Nat = O | S Nat
     deriving ( Eq , Show )
@@ -21,6 +21,11 @@ n ^ (S m) = n * (n ^ m)
 (∸) :: Nat -> Nat -> Nat
 (S n) ∸ (S m) = n ∸ m
 n ∸ m = n
+
+(<) :: Nat -> Nat -> Bool
+O < (S n) = True
+_ < O = False
+(S n) < (S m) = n < m
 
 double :: Nat -> Nat
 double O = O
