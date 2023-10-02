@@ -23,7 +23,7 @@ n ^ (S m) = n * (n ^ m)
 n ∸ m = n
 
 (<) :: Nat -> Nat -> Bool
-O < (S n) = True
+O < (S _) = True
 _ < O = False
 (S n) < (S m) = n < m
 
@@ -58,7 +58,7 @@ max (O, m) = m
 
 quot :: (Nat, Nat) -> Nat
 quot (O, m) = O
-quot (n, m) = if m < n then S (quot (n ∸ m, m)) else quot (n ∸ m, m)
+quot (n, m) = if m ≤ n then S (quot (n ∸ m, m)) else quot (n ∸ m, m)
 
 rem :: (Nat, Nat) -> Nat
 rem (O, m) = O
