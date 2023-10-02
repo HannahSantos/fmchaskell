@@ -1,5 +1,6 @@
 module Nat where
 
+import Bool
 import Prelude
     hiding ((+), (*), (^), (<), quot, min, gcd, lcm, div, max, pred, rem)
 
