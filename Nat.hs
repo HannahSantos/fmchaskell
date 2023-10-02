@@ -55,3 +55,14 @@ min (n, m) = O
 max :: (Nat, Nat) -> Nat
 max (n, O) = n
 max (O, m) = m
+
+quot :: (Nat, Nat) -> Nat
+quot (O, m) = O
+quot (n, m) = if m < n then S (quot (n ∸ m, m)) else quot (n ∸ m, m)
+
+rem :: (Nat, Nat) -> Nat
+rem (O, m) = O
+rem (n, m) = if m ≤ n then rem (n ∸ m, m) else n
+
+div :: (Nat, Nat) -> (Nat, Nat)
+div (n, m) = (quot (n, m), rem (n, m))
