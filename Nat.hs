@@ -56,13 +56,15 @@ max :: (Nat, Nat) -> Nat
 max (n, O) = n
 max (O, m) = m
 
+div :: (Nat, Nat) -> (Nat, Nat)
+div (_, O) = error "Zero cannot go there, your computer might break."
+div (n, m)
+    | n < m     = (O, n)
+    | otherwise = let (q', r') = div (n ∸ m, m)
+                  in (S q', r')
+
 quot :: (Nat, Nat) -> Nat
-quot (O, m) = O
-quot (n, m) = if m ≤ n then S (quot (n ∸ m, m)) else quot (n ∸ m, m)
+quot (n, m) = fst (div (n, m))
 
 rem :: (Nat, Nat) -> Nat
-rem (O, m) = O
-rem (n, m) = if m ≤ n then rem (n ∸ m, m) else n
-
-div :: (Nat, Nat) -> (Nat, Nat)
-div (n, m) = (quot (n, m), rem (n, m))
+rem (n, m) = snd (div (n, m))
