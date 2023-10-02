@@ -71,6 +71,12 @@ rem (n, m) = snd (div (n, m))
 
 gcd :: (Nat, Nat) -> Nat
 gcd (n, m) 
+    | n == O    = error "Sike, no zeros" 
+    | m == O    = error "Zero is still not allowed"
     | n == m    = n
     | n < m     = gcd (n, m ∸ n)
     | otherwise = gcd (n ∸ m, m)
+
+lcm :: (Nat, Nat) -> Nat
+lcm (O, O) = error "Zero cannot go both places, choose"
+lcm (n, m) = quot (n * m, gcd (n, m))
