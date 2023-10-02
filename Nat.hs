@@ -27,6 +27,11 @@ O < (S n) = True
 _ < O = False
 (S n) < (S m) = n < m
 
+(≤) :: Nat -> Nat -> Bool
+O ≤ _ = True
+_ ≤ O = False
+S n ≤ S m = n ≤ m
+
 double :: Nat -> Nat
 double O = O
 double (S n) = S (S (double n))
