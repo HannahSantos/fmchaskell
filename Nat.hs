@@ -68,3 +68,9 @@ quot (n, m) = fst (div (n, m))
 
 rem :: (Nat, Nat) -> Nat
 rem (n, m) = snd (div (n, m))
+
+gcd :: (Nat, Nat) -> Nat
+gcd (n, m) 
+    | n == m    = n
+    | n < m     = gcd (n, m ∸ n)
+    | otherwise = gcd (n ∸ m, m)
