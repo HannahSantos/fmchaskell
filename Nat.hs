@@ -95,3 +95,6 @@ isMul₃ :: Nat -> Bool
 isMul₃ O = True
 isMul₃ (S (S (S n))) = isMul₃ n
 isMul₃ _ = False
+
+divides :: Nat -> Nat -> Bool
+divides n m = rem (n, m) == O
