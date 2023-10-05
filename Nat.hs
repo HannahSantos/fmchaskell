@@ -90,3 +90,8 @@ gcd (n, m)
 lcm :: (Nat, Nat) -> Nat
 lcm (O, O) = error "Zero cannot go both places, choose"
 lcm (n, m) = quot (n * m, gcd (n, m))
+
+isMul₃ :: Nat -> Bool
+isMul₃ O = True
+isMul₃ (S (S (S n))) = isMul₃ n
+isMul₃ _ = False
