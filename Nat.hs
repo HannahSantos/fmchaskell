@@ -37,6 +37,11 @@ ev O = True
 ev (S O) = False
 ev (S (S n)) = ev n
 
+od :: Nat -> Bool
+od O = False
+od (S O) = True
+od (S (S n)) = ev n
+
 double :: Nat -> Nat
 double O = O
 double (S n) = S (S (double n))
