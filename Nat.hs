@@ -98,3 +98,7 @@ isMul₃ _ = False
 
 divides :: Nat -> Nat -> Bool
 divides n m = rem (n, m) == O
+
+isZero :: Nat -> Bool
+isZero O = True
+isZero _ = False
