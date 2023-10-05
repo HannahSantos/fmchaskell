@@ -1,6 +1,5 @@
 module Nat where
 
-import Bool
 import Prelude
     hiding ((+), (*), (^), (<), quot, min, gcd, lcm, div, max, pred, rem)
 
@@ -32,6 +31,11 @@ _ < O = False
 O ≤ _ = True
 _ ≤ O = False
 S n ≤ S m = n ≤ m
+
+ev :: Nat -> Bool
+ev O = True
+ev (S O) = False
+ev (S (S n)) = ev n
 
 double :: Nat -> Nat
 double O = O
